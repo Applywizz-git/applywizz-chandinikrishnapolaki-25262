@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cinematic luxury color palette */
+    --obsidian: 0 0% 5.5%;
+    --charcoal: 0 0% 11%;
+    --platinum: 0 0% 90%;
+    --ivory: 40 33% 97%;
+    --champagne: 34 28% 81%;
+    --sandstone: 30 20% 63%;
+    --rose-quartz: 15 20% 53%;
+    --graphite: 0 0% 17%;
+    
+    /* Semantic tokens */
+    --background: var(--ivory);
+    --foreground: var(--obsidian);
+    
+    --card: var(--ivory);
+    --card-foreground: var(--obsidian);
+    
+    --popover: var(--ivory);
+    --popover-foreground: var(--obsidian);
+    
+    --primary: var(--obsidian);
+    --primary-foreground: var(--ivory);
+    
+    --secondary: var(--champagne);
+    --secondary-foreground: var(--obsidian);
+    
+    --muted: var(--platinum);
+    --muted-foreground: var(--graphite);
+    
+    --accent: var(--sandstone);
+    --accent-foreground: var(--obsidian);
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--ivory);
+    
+    --border: var(--platinum);
+    --input: var(--platinum);
+    --ring: var(--sandstone);
+    
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--obsidian)) 0%, hsl(var(--charcoal)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--champagne)) 0%, hsl(var(--sandstone)) 100%);
+    /* --gradient-accent: linear-gradient(135deg, hsl(270, 85%, 70%) 0%, hsl(290, 80%, 60%) 100%); */
+
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(var(--sandstone) / 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--obsidian) / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: var(--obsidian);
+    --foreground: var(--ivory);
+    
+    --card: var(--charcoal);
+    --card-foreground: var(--ivory);
+    
+    --popover: var(--charcoal);
+    --popover-foreground: var(--ivory);
+    
+    --primary: var(--champagne);
+    --primary-foreground: var(--obsidian);
+    
+    --secondary: var(--graphite);
+    --secondary-foreground: var(--ivory);
+    
+    --muted: var(--graphite);
+    --muted-foreground: var(--platinum);
+    
+    --accent: var(--sandstone);
+    --accent-foreground: var(--ivory);
+    
+    --border: var(--graphite);
+    --input: var(--graphite);
+    --ring: var(--champagne);
+    
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --shadow-glow: 0 0 40px hsl(var(--champagne) / 0.3);
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--champagne) / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-black;
+  }
+  
+  .text-gradient {
+    /* @apply bg-gradient-to-r from-champagne to-sandstone bg-clip-text text-transparent; */
+    @apply bg-gradient-to-r from-purple-400 via-purple-400 to-purple-500 bg-clip-text text-transparent;
+
+  }
+  
+  .btn-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--sandstone)/0.5)];
+  }
+  
+  .parallax-section {
+    @apply relative overflow-hidden;
+  }
+}
