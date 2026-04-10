@@ -1180,7 +1180,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profileImage from '/chandini.png';
+import profileImage from '/chandini.jpeg';
 
 const Hero = () => {
   const [currentTech, setCurrentTech] = useState(0);
